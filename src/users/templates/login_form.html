@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block head_title %}Login{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<h1>Login</h1>
+
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger">{{message}}</div>
+    {% endfor %}
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <input type="submit" name="submit" id="submit_button" value="Login">
+    </div>
+    <p>No tienes cuenta en Wordplease? Consigue una pinchando <a href="{% url 'signup_page' %}">aquí</a></p>
+</form>
+{% endblock %}

@@ -4,9 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block head_title %} Wordplease Blogger {% endblock %}</title>
+    <link rel="stylesheet" href="{% static  'css/bootstrap.min.css' %}"
 </head>
 <body>
+<div class="menu">
+    {% if user.is_authenticated %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'post_form' %}">New Post</a></li>
+            <li><a href="{% url 'logout_page' %}">Logout</a></li>
+        </ul>
+
+
+    </nav>
+
+
+    {% endif %}
+</div>
     {% block content%}
     {% endblock %}
+
 </body>
 </html>

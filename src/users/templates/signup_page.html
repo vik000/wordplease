@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head_title %}Wordplease - Sign up{% endblock %}
+
+{% block content %}
+<h1>Sign Up to WordPlease</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">{{message}}</div>
+    {% endfor %}
+{% endif %}
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button type="submit">Sign Up</button>
+    </div>
+</form>
+{% endblock %}
