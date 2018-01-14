@@ -2,7 +2,16 @@
 {% block head_title %}Wordplease - Home{% endblock %}
 
 {% block content %}
-<h1>Página principal</h1>
-
-
+<div>
+    <h1>Wordplease Posts</h1>
+</div>
+<div>
+    {% if latest_posts %}
+        <ul>
+        {% for post in latest_posts %}
+            <li>{{post.title}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
 {% endblock %}
