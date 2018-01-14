@@ -4,9 +4,9 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)
-    username = models.CharField(max_length=20)
-    blog = models.CharField(max_length=50)
-    blog_description = models.TextField()
+    username = models.CharField(max_length=20, blank=True)
+    blog = models.CharField(max_length=50, blank=True)
+    blog_description = models.TextField(blank=True)
     email = models.CharField(max_length=50)
     password = models.CharField(max_length=15)
     def __str__(self):

@@ -13,7 +13,7 @@ class Post(models.Model):
     title = models.CharField(max_length=50)
     excerpt = models.TextField(max_length=200) #debería ser un resumen del body, podríamos coger solo las primeras lineas?
     body = models.TextField()
-    image_url = models.URLField()
+    image_url = models.URLField(max_length=100)
     postDate = models.DateTimeField(auto_now_add=True)
     #categories: heredadas de otra clase
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
