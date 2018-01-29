@@ -1,2 +1,10 @@
 /env
 /.idea
+
+# directorio con entorno virtual
+/.env
+# pycache
+__pycache__/
+
+# base de datos sqlite
+db.sqlite3
