@@ -1,2 +1,7 @@
 /env
 /.idea
+
+# directorio con entorno virtual
+/.env
+# pycache
+__pycache__/
